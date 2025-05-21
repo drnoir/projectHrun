@@ -1,0 +1,82 @@
+[
+	{
+		"title": "NPC1",
+		"tags": "",
+		"body": "Welcome to the forest\ni need your help \nto cure the lake\nfind all 12 flowers to cure the lake\nI will make a potion to do this\nwill you help?\n[[ Yes: |Yes]]\n[[ No: |No]]",
+		"position": {
+			"x": -929,
+			"y": -453
+		},
+		"colorID": 0
+	},
+	{
+		"title": "NPC2",
+		"tags": "",
+		"body": "You caused this\nthe lake is this way because of You\n.",
+		"position": {
+			"x": 51,
+			"y": -63
+		},
+		"colorID": 8
+	},
+	{
+		"title": "NPC3",
+		"tags": "",
+		"body": "you need to help cure the lake\nwe the dryads will thank you for this\nreturn once the lake is cured\n.",
+		"position": {
+			"x": 269,
+			"y": -60
+		},
+		"colorID": 8
+	},
+	{
+		"title": "NPC3 new",
+		"tags": "",
+		"body": "thank you for curing the lake\n.",
+		"position": {
+			"x": 270,
+			"y": 155
+		},
+		"colorID": 0
+	},
+	{
+		"title": "NPC2 new",
+		"tags": "",
+		"body": "I was wrong about you thank you\nyou and your kind are not that bad\nas there must be others like you\n.",
+		"position": {
+			"x": 47,
+			"y": 159
+		},
+		"colorID": 0
+	},
+	{
+		"title": "NPC1 new",
+		"tags": "",
+		"body": "Thank you for curing the lake\nthe forest will flourish now\nthank you for your help\n.",
+		"position": {
+			"x": -166,
+			"y": 161
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Yes",
+		"tags": "",
+		"body": "thank you\n.",
+		"position": {
+			"x": -658,
+			"y": -228
+		},
+		"colorID": 0
+	},
+	{
+		"title": "No",
+		"tags": "",
+		"body": "if you feel like helping any way\njust find the flowers\n.",
+		"position": {
+			"x": -656,
+			"y": -453
+		},
+		"colorID": 8
+	}
+]
