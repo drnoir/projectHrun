@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macclesfield Level 3 IT Games Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #d0eaff;
+            /* Light blue background */
+        }
+
+        canvas {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-img-top {
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Macclesfield Level 3 IT Games </h1>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+            <!-- Cards for all students -->
+            <script>
+                const students = [
+                    ["Will", "A man with curly hair and sunglasses smiling", 'Le Game'],
+                    ["Ivan", "A ninja with blond hair", 'Projecthrun'],
+                    ["Leon", "A skinny man smiling", 'main'],
+                    ["Bobby", "A young man with long blonde hair",'main'],
+                    ["Rueben", "Jesus with a beanie"],
+                    ["Harlee", "Smiling man"],
+                    ["Charlie", "Smiling man",'home'],
+                    ["Dylan", "A tan skinned man laughing", 'game'],
+                    ["Andrew", "A Slavic looking young man smiling with short hair"],
+                    ["Aldrich", "An Indian man smiling with glasses on"],
+                    ["Marcus", "A tall young man thinking pose"],
+                    ["Jack", "A chubby and cheerful man"],
+                    ["Mason", "A young man a rapper, white",'home'],
+                    ["Ben", "Geeky man with a gun smiling with a cigar",'home'],
+                    ["Eva", "A Slavic woman with blonde hair and glasses grinning"],
+                    ["Tobie", "A man who looks like Seth Rogen with sunglasses smiling"]
+                ];
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    const row = document.querySelector('.row');
+                    students.forEach(([name, desc, playlink], index) => {
+                        const col = document.createElement('div');
+                        col.className = 'col';
+                        col.innerHTML = `
+              <div class="card h-100">
+                <canvas id="sprite${index}" class="card-img-top" width="300" height="300"></canvas>
+                <div class="card-body">
+                  <h5 class="card-title">${name}</h5>
+                  <p class="card-text">${desc}</p>
+                  <a href="games/${name}/${playlink}.html" class="btn btn-primary">Play Game</a>
+                </div>
+              </div>`;
+                        row.appendChild(col);
+                    });
+
+                    drawSprites();
+                });
+            </script>
+        </div>
+    </div>
+
+    <script>
+        const spriteDescriptions = [
+            "A man with curly hair and sunglasses smiling  #shirt:#4CAF50 #skin:#D2A679",
+            "A slavic ninja with blonde hair nuetral #shirt:#000000 #skin:#D8BBA9",
+            "A skinny man smiling #shirt:#2F4F4F #skin:#D6AA8D",
+            "A young man with long blonde hair nuetral #shirt:#BDB76BC #skin:#D8BBA9",
+            "Jesus with beard and a beanie #shirt:#8B7355 #skin:#D8BBA9",
+            "Smiling man #shirt:#00008B #skin:#D8BBA9",
+            "Smiling man #shirt:#000000 #skin:#D8BBA9",
+            "A brown man laughing with curly hair  #shirt:#8B8878 #skin:#C78D75",
+            "A slavic looking young man nuetral with curly hair #000000 #skin:#D8BBA9",
+            "An Indian man with a beard nuetral with glasses on  curly hair  #000000 #skin:#96634E",
+            "A nuetral tall young man thinking pose #shirt:#00008B #skin:#D8BBA9",
+            "A chubby and cheerful man blonde hair #shirt:#FFE4C4  #skin:#D8BBA9",
+            "A young man a rapper, white blonde hair #shirt:##000000 #skin:#D8BBA9",
+            "nuetral Geeky man with glasses and a beard smiling with a cigar #shirt:#000000 #skin:#D8BBA9",
+            "A sad slavic woman with blonde hair and glasses grinning #shirt:#CD2626 #skin:#D8BBA9",
+            "A  man who looks like Seth Rogen with sunglasses smiling #shirt:#363636 #skin:#D8BBA9"
+        ];
+
+
+        function drawSprites() {
+            spriteDescriptions.forEach((desc, index) => {
+                const canvas = document.getElementById(`sprite${index}`);
+                if (canvas) {
+                    const ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    // Background
+                    ctx.fillStyle = '#f8f9fa';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                    // Parse custom colors for shirt and skin from description
+                    const shirtColorMatch = desc.match(/#shirt:([^ ]+)/i);
+                    const shirtColor = shirtColorMatch ? shirtColorMatch[1] : '#3498db';
+
+                    const skinColorMatch = desc.match(/#skin:([^ ]+)/i);
+                    const skinColor = skinColorMatch ? skinColorMatch[1] : '#ffcc99';
+
+                    // Body type
+                    let bodyWidth = 60;
+                    let bodyHeight = 100;
+                    if (desc.includes("skinny")) {
+                        bodyWidth = 40;
+                    } else if (desc.includes("chubby") || desc.includes("large")) {
+                        bodyWidth = 80;
+                    }
+
+
+        const shirtX = 150 - bodyWidth / 2;
+        const shirtY = 180;
+        const hexMatch = desc.match(/#([0-9a-fA-F]{6})/);
+        
+          ctx.fillStyle = hexMatch ? `#${hexMatch[1]}` : '#3498db';
+          ctx.fillRect(shirtX, shirtY, bodyWidth, bodyHeight);
+        
+      
+
+                    // Arms
+                    ctx.fillStyle = skinColor;
+                    ctx.fillRect(150 - bodyWidth / 2 - 20, 190, 20, 60);
+                    ctx.fillRect(150 + bodyWidth / 2, 190, 20, 60);
+
+                    // Head
+                    ctx.fillStyle = skinColor;
+                    ctx.beginPath();
+                    ctx.arc(150, 120, 60, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // Hoodie
+                    if (desc.includes("hoodie")) {
+                        ctx.fillStyle = '#555';
+                        ctx.beginPath();
+                        ctx.arc(150, 120, 65, Math.PI, 0);
+                        ctx.lineTo(215, 160);
+                        ctx.lineTo(85, 160);
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+
+                    // Hair
+                    if (desc.includes("curly hair")) {
+                        ctx.fillStyle = '#333';
+                        for (let i = 0; i < 10; i++) {
+                            ctx.beginPath();
+                            ctx.arc(120 + i * 10, 70, 10, 0, Math.PI * 2);
+                            ctx.fill();
+                        }
+                    } else if (desc.includes("blonde hair")) {
+                        ctx.fillStyle = 'gold';
+                        ctx.fillRect(90, 60, 120, 30);
+                    }
+
+                    if (desc.includes("long hair")) {
+                        ctx.fillStyle = '#663300';
+                        ctx.fillRect(90, 100, 120, 50);
+                    } else if (desc.includes("short hair")) {
+                        ctx.fillStyle = '#222';
+                        ctx.fillRect(100, 60, 100, 20);
+                    }
+
+                    // Glasses
+                    if (desc.includes("glasses")) {
+                        ctx.strokeStyle = '#000';
+                        ctx.lineWidth = 2;
+                        ctx.strokeRect(115, 105, 25, 15);
+                        ctx.strokeRect(160, 105, 25, 15);
+                        ctx.beginPath();
+                        ctx.moveTo(140, 112);
+                        ctx.lineTo(160, 112);
+                        ctx.stroke();
+                    }
+
+                    // Eyes
+                    ctx.fillStyle = '#000';
+                    ctx.beginPath();
+                    ctx.arc(135, 120, 5, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(165, 120, 5, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // Mouth Expression
+                    ctx.strokeStyle = '#000';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    if (desc.includes("sad")) {
+                        ctx.arc(150, 160, 20, Math.PI, 0, true);
+                    } else if (desc.includes("neutral") || desc.includes("thinking")) {
+                        ctx.moveTo(130, 145);
+                        ctx.lineTo(170, 145);
+                    } else {
+                        ctx.arc(150, 140, 20, 0, Math.PI);
+                    }
+                    ctx.stroke();
+
+                    // Sunglasses
+                    if (desc.includes("sunglasses")) {
+                        ctx.fillStyle = '#222';
+                        ctx.fillRect(115, 105, 25, 15);
+                        ctx.fillRect(160, 105, 25, 15);
+                        ctx.strokeStyle = '#000';
+                        ctx.beginPath();
+                        ctx.moveTo(140, 112);
+                        ctx.lineTo(160, 112);
+                        ctx.stroke();
+                    }
+
+                    // Beanie
+                    if (desc.includes("beanie")) {
+                        ctx.fillStyle = '#777';
+                        ctx.beginPath();
+                        ctx.arc(150, 75, 60, Math.PI, 0);
+                        ctx.fill();
+                    }
+
+                    // Gun
+                    if (desc.includes("gun")) {
+                        ctx.fillStyle = '#444';
+                        ctx.fillRect(200, 130, 20, 10);
+                    }
+
+                    // Cigar
+                    if (desc.includes("cigar")) {
+                        ctx.fillStyle = '#654321';
+                        ctx.fillRect(170, 150, 20, 5);
+                    }
+
+                    // Beard
+                    if (desc.includes("Jesus") || desc.includes("beard") || desc.includes("Seth Rogen")) {
+                        ctx.strokeStyle = '#663300';
+                        ctx.lineWidth = 4;
+                        ctx.beginPath();
+                        ctx.arc(150, 150, 30, 0, Math.PI);
+                        ctx.stroke();
+                    }
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+[
+	{
+		"title": "Beginning",
+		"tags": "",
+		"body": "Hello young wizard\nWill you clear those coins form this area please\nThey're blocking up the area\n[[ Yeah Sure: |Yes]] \n[[ No (formally): |No]] ]]",
+		"position": {
+			"x": 291,
+			"y": 193
+		},
+		"colorID": 0
+	},
+	{
+		"title": "NPC2",
+		"tags": "",
+		"body": "Welcome to the town \nif you collect my coins i will think of you as my friend \nIf not i will despise you\n[[ Yes my good sir: |Yep]] \n[[ Nopely nope: |Nope]]",
+		"position": {
+			"x": -352,
+			"y": -13
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Happy",
+		"tags": "",
+		"body": "Yummy coins good job\nThere is more coins at the next area\n\n",
+		"position": {
+			"x": 705,
+			"y": 293
+		},
+		"colorID": 8
+	},
+	{
+		"title": "Yes",
+		"tags": "",
+		"body": "Thank you my good sir",
+		"position": {
+			"x": 201,
+			"y": -58
+		},
+		"colorID": 0
+	},
+	{
+		"title": "No",
+		"tags": "",
+		"body": "Pretty Please\n[[ Yeshp: |Yes]] \n[[ Yep: |Yes]]",
+		"position": {
+			"x": 631,
+			"y": -27
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Yep",
+		"tags": "",
+		"body": "You shall ever bestow my grattitude",
+		"position": {
+			"x": -232,
+			"y": -233
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Nope",
+		"tags": "",
+		"body": "Ok then i shall despise you",
+		"position": {
+			"x": -11,
+			"y": -233
+		},
+		"colorID": 0
+	}
+]

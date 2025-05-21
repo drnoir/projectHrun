@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forum</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">HOME</a>
+    <a href="login.html">LOGIN</a>
+    <a href="forum.html">FORUM</a>
+  </div>
+
+  <div class="forum-wrapper">
+    <h2>Player Forum</h2>
+
+    <div class="forum-form">
+      <input type="text" id="username" placeholder="Your Name" />
+      <textarea id="message" placeholder="Your Message"></textarea>
+      <button onclick="postMessage()">Post</button>
+    </div>
+
+    <div class="forum-posts" id="forum-posts">
+      <!-- Posts will appear here -->
+    </div>
+  </div>
+
+  <img src="purple night sky .jpg" class="img-fluid" alt="background" />
+
+  <script>
+    function postMessage() {
+      const name = document.getElementById('username').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !message) return;
+
+      const postBox = document.createElement('div');
+      postBox.className = 'post';
+      postBox.innerHTML = `<strong>${name}</strong>: ${message}`;
+
+      document.getElementById('forum-posts').prepend(postBox);
+
+      document.getElementById('username').value = '';
+      document.getElementById('message').value = '';
+    }
+  </script>
+
+</body>
+</html>

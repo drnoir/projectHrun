@@ -1,0 +1,168 @@
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 17px;
+    background-color: #5e2356;
+    color: #f3f3f3;
+    font-size: 25px;
+    align-items: top;
+    z-index: 99;
+    box-shadow: 1px 1px 20px #000000;
+
+  }
+  
+  .navbar a {
+    color: #0f0f0f;
+    text-decoration: none;
+    padding: 7px 17px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    color: #fff8fe;
+    box-shadow: 1px 1px 20px #111111;
+ 
+  }
+  
+  .navbar a:hover {
+  background-color: #f3f3f3;
+  color: #000;
+  box-shadow: 1px 1px 20px #f7f4f4;
+  
+  
+
+
+    
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .navbar {
+      
+      text-align: left;
+      padding: 10px;
+    }
+    .navbar a {
+      font-size: 20px; 
+     
+    }
+  }
+  
+  
+  @media (max-width: 480px) {
+    .navbar a {
+      font-size: 18px; 
+      padding: 4px 8px; 
+    }
+  }
+  
+ 
+  h1 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-style: italic;
+    font-size: 4vw;
+    margin: 0; 
+  }
+  
+ 
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 6vw; 
+      right: 10px; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 8vw; 
+      right: 5px;  
+    }
+  }
+  
+  
+  body {
+    background-color: #000000;
+  }
+  
+ 
+  .container {
+    width: 100%; 
+    height: auto;
+  }
+  
+ 
+  .img-fluid {
+    width: 100%;
+    height: 100vh; 
+    object-fit: cover; 
+    opacity: 0.7;
+  }
+  
+  
+  .middle {
+    position: fixed; 
+    top: 53%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 70%; 
+    height: 650px; 
+    background-color: #5e2356; 
+    padding: 20px; 
+    color: #d1cdcd; 
+    z-index: 99; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+    border-radius: 10px; 
+    text-align:center;
+    font-weight: bold;
+  }
+
+
+
+  h2 {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 50px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  }
+  
+
+
+
+ 
+
+
+   .middle img {
+      position: absolute; 
+      bottom: 10%;  
+      left: 50%; 
+      transform: translateX(-50%); 
+      width: 600px; 
+      height: 400px;
+    
+  }
+  
+
+
+  @media (max-width: 480px) {
+    .middle img {
+      height: 100px ;  
+    }
+  }
+  
+
+
+
+.middle iframe {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  height: 525px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}

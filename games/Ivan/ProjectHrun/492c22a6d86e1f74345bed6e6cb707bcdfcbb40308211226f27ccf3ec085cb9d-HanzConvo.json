@@ -1,0 +1,32 @@
+[
+	{
+		"title": "HanzConvo",
+		"tags": "",
+		"body": "So this is the village huh?\n[[ Yup! |answeryes]] |]]\n[[ No.|answerno]] |]]",
+		"position": {
+			"x": 299,
+			"y": 157
+		},
+		"colorID": 0
+	},
+	{
+		"title": "answeryes",
+		"tags": "",
+		"body": "I see, well then i wont interrupt, go reconnect with people.",
+		"position": {
+			"x": 25,
+			"y": 7
+		},
+		"colorID": 0
+	},
+	{
+		"title": "answerno",
+		"tags": "",
+		"body": "Then.. why are we here?",
+		"position": {
+			"x": 558,
+			"y": 16
+		},
+		"colorID": 0
+	}
+]

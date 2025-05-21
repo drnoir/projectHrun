@@ -1,0 +1,22 @@
+[
+	{
+		"title": "DA_beginning ",
+		"tags": "",
+		"body": "Welcome to the town my boy \nCollect my the coins in the sky appease me \nIf you don't i shall hate indefinetly",
+		"position": {
+			"x": 573,
+			"y": 75
+		},
+		"colorID": 0
+	},
+	{
+		"title": "CoinCollector",
+		"tags": "",
+		"body": "Thats for collecting the coins \nThey were bugging me \nIf you go through the portal it should take you to the next area",
+		"position": {
+			"x": 104,
+			"y": 103
+		},
+		"colorID": 0
+	}
+]

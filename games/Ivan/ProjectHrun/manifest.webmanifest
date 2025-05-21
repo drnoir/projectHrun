@@ -1,0 +1,12 @@
+{
+  "name": "Pushing 5.",
+  "short_name": "Pushing 5.",
+  "id": "com.example.gamename",
+  "description": "",
+  "orientation": "landscape",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}

@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Dewol intial dialog",
+		"tags": "",
+		"body": "who might you be than - Dewol",
+		"position": {
+			"x": 255,
+			"y": 45
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Node",
+		"tags": "",
+		"body": "just an adventurer",
+		"position": {
+			"x": 258,
+			"y": 275
+		},
+		"colorID": 0
+	}
+]

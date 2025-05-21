@@ -1,0 +1,22 @@
+[
+	{
+		"title": "dewol",
+		"tags": "",
+		"body": "dewol: could you go and collect the inteligence artifact from goliath from me. just follow the path and enter the dungeon",
+		"position": {
+			"x": 120,
+			"y": -14
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Node",
+		"tags": "",
+		"body": "swag",
+		"position": {
+			"x": 346,
+			"y": -12
+		},
+		"colorID": 0
+	}
+]
