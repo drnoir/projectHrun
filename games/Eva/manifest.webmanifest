@@ -1,0 +1,12 @@
+{
+  "name": "Needy Rhythm",
+  "short_name": "Needy Rhythm",
+  "id": "com.example.gamename",
+  "description": "",
+  "orientation": "landscape",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}
