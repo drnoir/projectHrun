@@ -1,0 +1,95 @@
+/* General layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+/* Header, nav, and footer */
+header, nav, footer {
+  background-color: #2e2e3e;
+  padding: 1em;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+nav a {
+  color: #ccc;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* Centered form */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+/* Form box */
+form {
+  background-color: #2b2b3a;
+  padding: 2em;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Form heading */
+form h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #00bcd4;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 0.6em;
+  margin: 0.6em 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+  font-size: 1em;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #00bcd4;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 0.6em;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #019bab;
+}
+
+/* Footer */
+footer {
+  margin-top: 2em;
+  font-size: 0.9em;
+  color: #aaa;
+}

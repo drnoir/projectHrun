@@ -1,0 +1,372 @@
+[
+	{
+		"title": "Owen Start",
+		"tags": "",
+		"body": "Owen: Hello There! <<Intro>> \nOwen: I haven't seen you around here before, are you new?\n[[Yes|Introduction]]\n[[No|IntroSkip]]",
+		"position": {
+			"x": 329,
+			"y": 244
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Introduction",
+		"tags": "",
+		"body": "You: Yes\nOwen: Ah! Then allow me to introduce myself.\nOwen: I am the mayor of this town, Owen. It is my job to look after the people here.\nOwen: Currently the sections of this town to the east and west have been blocked off due to renovations, so the only accessible buildings are here, and the one to the south.",
+		"position": {
+			"x": 205,
+			"y": -21
+		},
+		"colorID": 0
+	},
+	{
+		"title": "IntroSkip",
+		"tags": "",
+		"body": "You: No\nOwen: My mistake, I'll let you get going then.",
+		"position": {
+			"x": 501,
+			"y": -18
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TieGuy Start",
+		"tags": "",
+		"body": "Mr Tie: Welcome to town!\nMr Tie: You should go talk to the mayor, he's waiting near the storage building to the north.",
+		"position": {
+			"x": -654,
+			"y": 774
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Q Start",
+		"tags": "",
+		"body": "Owen: You're back? I have a favor to ask of you then.\nOwen: Would you mind helping me look for my monocle, I seem to have lost it and I can't do my work without it.\n[[I'd be glad to help|QuestAccept]]\n[[Sorry, I'm busy|QuestDecline]]",
+		"position": {
+			"x": 18,
+			"y": 255
+		},
+		"colorID": 0
+	},
+	{
+		"title": "QuestAccept",
+		"tags": "",
+		"body": "You:I'd be glad to help\nOwen: Thank you so much, I think I lost it in the storage building above us, but we can't get in without the key.\nOwen: The key to the storage room should be in my house to the south, here's my house key so you can go in! <<set $QuestStatus to \"Accepted\">>",
+		"position": {
+			"x": -314,
+			"y": -33
+		},
+		"colorID": 0
+	},
+	{
+		"title": "QuestDecline",
+		"tags": "",
+		"body": "<<if $QuestStatus == \"Declined\">>\nYou: I don't have the time\n<<else>> \nYou: Sorry, I'm busy.\n<<endif>> \nOwen: That's alright, I'll try to find it myself. <<set $QuestStatus to \"Declined\">>",
+		"position": {
+			"x": -20,
+			"y": -45
+		},
+		"colorID": 0
+	},
+	{
+		"title": "ReQuest",
+		"tags": "",
+		"body": "Owen: I know you said you were busy, but I could really use your help.\n[[Sure, I suppose I can hear you out|QuestAccept]]\n[[I don't have the time|QuestDecline]]",
+		"position": {
+			"x": -286,
+			"y": 249
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Gratitude",
+		"tags": "",
+		"body": "Owen: Thanks for helping me out",
+		"position": {
+			"x": -545,
+			"y": 246
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TieGuy_PreQuest",
+		"tags": "",
+		"body": "Mr Tie: So, you've met the mayor.\nMr Tie: He seems to have forgotten his monocle today, most likely left it in his house.\nMr Tie: He'll probably come looking for it soon, but something seems off about the monocle...\nMr Tie: When he wears it he seems like a different person, I wanna find out why.\n[[TieGuyAltQuest]]",
+		"position": {
+			"x": -374,
+			"y": 777
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TieGuyAltQuest",
+		"tags": "",
+		"body": "Mr Tie: I have the tools to get you into his house, however I cannot enter myself.\nMr Tie: I can let you in if you promise to give me the monocle so I can investigate it.\n<<if $QuestStatus == \"Accepted\">>\nYou: Actually, Owen gave me a key to his house\nMr Tie: Really? He must trust you then\nYou: He also said that his monocle was in the storage house... not his house.\nMr Tie: He must've dropped it last night when counting the supplies\nMr Tie: Either way, will you help me or not\n[[I'm not betraying the mayor's trust.|TieGuyDeclinedQuest]]\n[[Sure, why not.|TieGuyAcceptedQuest]]\n<<elseif $QuestStatus == \"Declined\">>\n[[I don't have time for this either|TieGuyDeclinedQuest]]\n[[I'd be grateful if you could let me in|TieGuyAcceptedQuest]]\n<<else>>\n[[That would be stealing|TieGuyDeclinedQuest]]\n[[I'm down for a little bit of mischief|TieGuyAcceptedQuest]]\n<<endif>>",
+		"position": {
+			"x": -268,
+			"y": 1048
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TieGuyDeclinedQuest",
+		"tags": "",
+		"body": "<<if $QuestStatus == \"Accepted\">>\nYou: I'm not betraying the mayor's trust.\n<<elseif $QuestStatus == \"Declined\">>\nYou: I don't have time for this either\n<<else>>\nYou: That would be stealing\n<<endif>>\n\nMr Tie: I hope, for both of our sakes, that you change your mind\n<<set $TieQuest to \"Declined\">>",
+		"position": {
+			"x": -10,
+			"y": 1257
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TieGuyAcceptedQuest",
+		"tags": "",
+		"body": "<<if $QuestStatus == \"Accepted\">>\nYou: Sure, why not\n<<elseif $QuestStatus == \"Declined\">>\nYou: I'd be grateful if you could let me in\n<<UnlockMayorHouse>>\n<<else>>\nYou: I'm down for a little bit of mischief\n<<UnlockMayorHouse>> \n<<endif>>\n\nMr Tie: Thanks for your cooperation\n<<set $TieQuest to \"Accepted\">>",
+		"position": {
+			"x": -446,
+			"y": 1299
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TieGuyPostQuest",
+		"tags": "",
+		"body": "<<if $QuestStatus == \"Accepted\">>\nMr Tie: Looks like you had a good time talking to the mayor?\nMr Tie: But I wouldn't trust him, if I were you. Something seems off with him, especially relating to that monocle of his.\nMr Tie: I wanna investigate it, but I can't do it alone\n<<else>>\nMr Tie: Looks like you gave the mayor the cold shoulder, don't wanna help him out?\nMr Tie: I respect it, though I hope you'll be able to help me instead.\nMr Tie: I don't trust the mayor either, especially regarding that monocle of his, he turns into a different person when wearing it, I swear\n<<endif>>\n[[TieGuyAltQuest]]",
+		"position": {
+			"x": -110,
+			"y": 780
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TieGuyHurry",
+		"tags": "",
+		"body": "<<if $QuestStatus == \"Accepted\">>\nMr Tie: Hurry up and find that key\nMr Tie: Even if Owen trusts you, he'll get suspicious if you take too long\n<<else>>\nMr Tie: Hurry up and find the monocle, before Owen gets back\n<<endif>>",
+		"position": {
+			"x": 186,
+			"y": 780
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TieGuyReQuest",
+		"tags": "",
+		"body": "Mr Tie: Come on, surely you can tell something suspicious is happening too\nMr Tie: You can trust me\n<<if $QuestStatus == \"Accepted\">> \n[[I told you, I won't betray the mayor|TieGuyDeclinedReQuest]]\n[[Fine, I'll trust you. I better not regret this |TieGuyAcceptedReQuest]]\n<<elseif $QuestStatus == \"Declined\">>\n[[I told you, I don't have the time |TieGuyDeclinedReQuest]]\n[[Fine, I suppose I can spare some time to get you the monocle |TieGuyAcceptedReQuest]]\n<<else>>\n[[I told you, I'm not stealing |TieGuyDeclinedReQuest]]\n[[I still don't feel good about this, but I'll trust you |TieGuyAcceptedReQuest]]\n<<endif>>",
+		"position": {
+			"x": -265,
+			"y": 1554
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TieGuyDeclinedReQuest",
+		"tags": "",
+		"body": "<<if $QuestStatus == \"Accepted\">> \nYou: I told you, I won't betray the mayor\n<<elseif $QuestStatus == \"Declined\">>\nYou: I told you, I don't have the time\n<<else>>\nYou: I told you, I'm not stealing\n<<endif>>\nMr Tie: I hope, for both of our sakes, that you change your mind\n<<set $TieQuest to \"Declined\">>",
+		"position": {
+			"x": -574,
+			"y": 1542
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TieGuyAcceptedReQuest",
+		"tags": "",
+		"body": "<<if $QuestStatus == \"Accepted\">>\nYou: Fine, I'll trust you. I better not regret this\n<<elseif $QuestStatus == \"Declined\">>\nYou: Fine, I suppose I can spare some time to get you the monocle\n<<UnlockMayorHouse>>\n<<else>>\nYou: I still don't feel good about this, but I'll trust you \n<<UnlockMayorHouse>>\n<<endif>>\nMr Tie: Thanks for your cooperation\n<<set $TieQuest to \"Accepted\">>",
+		"position": {
+			"x": 57,
+			"y": 1515
+		},
+		"colorID": 0
+	},
+	{
+		"title": "DoorLock_Storage",
+		"tags": "",
+		"body": "*The door appears locked\n<<if $hasStorageKey>>\n*You have the key, would you like to unlock the door?\n[[Yes|UnlockStorage]]\n[[No|DeclineUnlock]]\n<<endif>>",
+		"position": {
+			"x": 972,
+			"y": 1112
+		},
+		"colorID": 0
+	},
+	{
+		"title": "UnlockStorage",
+		"tags": "",
+		"body": "<<UnlockStorage>>\n*You unlock the door",
+		"position": {
+			"x": 962,
+			"y": 815
+		},
+		"colorID": 0
+	},
+	{
+		"title": "DeclineUnlock",
+		"tags": "",
+		"body": "*You decide to not unlock the door",
+		"position": {
+			"x": 1308,
+			"y": 1111
+		},
+		"colorID": 0
+	},
+	{
+		"title": "DoorLock_Mayor",
+		"tags": "",
+		"body": "*The door appears locked\n<<if $hasMayorKey>>\n*You have the key, would you like to unlock the door?\n[[Yes|UnlockOwen]]\n[[No|DeclineUnlock]]\n<<endif>>",
+		"position": {
+			"x": 1646,
+			"y": 1096
+		},
+		"colorID": 0
+	},
+	{
+		"title": "UnlockOwen",
+		"tags": "",
+		"body": "<<UnlockMayorHouse>>\n*You unlock the door",
+		"position": {
+			"x": 1645,
+			"y": 806
+		},
+		"colorID": 0
+	},
+	{
+		"title": "PostStorageKey_Owen",
+		"tags": "",
+		"body": "<<if $QuestStatus == \"Accepted\">>\nOwen: Oh good! You found the key, now you just have to open the storage building and retrieve my monocle.\n<<else>>\nOwen: That's the key to the storage room...\nOwen: How did you find that? It was in my house.\n[[A guy wearing a tie let me in |Confess]]\n[[I just found this key on the grass outside |Lie]]\n<<endif>>",
+		"position": {
+			"x": -1604,
+			"y": 203
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Confess",
+		"tags": "",
+		"body": "You: A guy wearing a tie let me in\nYou: He said he was suspicious of your monocle and wanted to investigate it\nOwen: You believed that? Clearly he's just trying to rob me.\nOwen: Anyway, I need that monocle to do my work, so could you go grab it for me.",
+		"position": {
+			"x": -1781,
+			"y": -124
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lie",
+		"tags": "",
+		"body": "You: I'm not sure what you mean, I just found this key on the grass outside\nOwen: ...\nOwen: I'm not sure why you're lying to me, but since you're going in there anyway can you grab my monocle?",
+		"position": {
+			"x": -1426,
+			"y": -138
+		},
+		"colorID": 0
+	},
+	{
+		"title": "PostStorageKey_NoTieQuest_MrTie",
+		"tags": "",
+		"body": "Mr Tie: Owen let you into his house to find his monocle, I'm surprised\nMr Tie: Though it doesn't look like you found it...\nMr Tie: I bet he told you where it was, if you could give it to me instead of him so I can investigate it, that would be appreciated.\nMr Tie: I think something is... off about it",
+		"position": {
+			"x": -1818,
+			"y": 736
+		},
+		"colorID": 0
+	},
+	{
+		"title": "PostStorageKey_AcceptedTieQuest_MrTie",
+		"tags": "",
+		"body": "<<if $QuestStatus == \"Accepted\">>\nMr Tie: You found the key?\nMr Tie: Nice!\nMr Tie: Now all you need to do is grab the monocle from the storage building\n<<else>>\nMr Tie: You couldn't find the monocle?\nMr Tie: But it looks like you found something else\nYou: Yeah, it looks like the key to the storage building\nMr Tie: It's possible that the Mayor left his monocle in there checking stock last night, you should check.\nMr Tie: Let me know if you find it, and remember\nMr Tie: Don't let the Mayor know about this\n<<endif>>",
+		"position": {
+			"x": -1566,
+			"y": 738
+		},
+		"colorID": 0
+	},
+	{
+		"title": "PostStorageKey_DeclinedTieQuest_MrTie",
+		"tags": "",
+		"body": "Mr Tie: Back so soon?\nMr Tie: Did you find what you were looking for\n[[Yep |explain]]\n[[Still looking |dismiss]]",
+		"position": {
+			"x": -1307,
+			"y": 735
+		},
+		"colorID": 0
+	},
+	{
+		"title": "explain",
+		"tags": "",
+		"body": "You: Yep! I found the key\nYou: About to go get the monocle from the storage building\nMr Tie: This probably won't convince you, but please, when you find the monocle don't give it to the Mayor",
+		"position": {
+			"x": -1546,
+			"y": 1088
+		},
+		"colorID": 0
+	},
+	{
+		"title": "dismiss",
+		"tags": "",
+		"body": "You: No, I couldn't find it\nMr Tie: ...\nYou: I'm serious\nMr Tie: Sure, just make sure if you ever do find the monocle, don't give it to the Mayor",
+		"position": {
+			"x": -1074,
+			"y": 1071
+		},
+		"colorID": 0
+	},
+	{
+		"title": "PostMonocle_Owen",
+		"tags": "",
+		"body": "<<if $QuestStatus == \"Accepted\">>\nOwen: You found it? Great! Now i can get on with my work for today\n<<else>>\nOwen: You found my monocle then?\nOwen: You better give it to me, I need to get on with my work\nOwen: Oh, and if i catch you sneaking around again...\nOwen: There'll be consequences\n<<endif>>\n[[*Give Owen the Monocle |OwenMonocle]]\n[[*Keep the monocle |KeepMonocle_Owen]]",
+		"position": {
+			"x": -2516,
+			"y": 225
+		},
+		"colorID": 0
+	},
+	{
+		"title": "OwenMonocle",
+		"tags": "",
+		"body": "Owen:Thanks!\n<<OwenMonocleSprite>>\nOwen: I've been waiting all day for this\nYou: Wait... why do you have a mustache now\nOwen: Don't worry about it\n<<OwenMonocleEnding>>\nOwen: Im saying nothing",
+		"position": {
+			"x": -2744,
+			"y": -89
+		},
+		"colorID": 0
+	},
+	{
+		"title": "KeepMonocle_Owen",
+		"tags": "",
+		"body": "Owen: I'm not going to use force to get it off you\nOwen: BUT...\nOwen: Make sure you give it to me",
+		"position": {
+			"x": -2324,
+			"y": -76
+		},
+		"colorID": 0
+	},
+	{
+		"title": "PostMonocle_MrTie",
+		"tags": "",
+		"body": "Mr Tie: You have the Monocle!\nMr Tie: Quick, give it to me I'll finally be able to investigate it\n[[*Give Mr Tie the Monocle |MrTieMonocle]]\n[[*Keep the monocle |KeepMonocle_MrTie]]",
+		"position": {
+			"x": -2448,
+			"y": 726
+		},
+		"colorID": 0
+	},
+	{
+		"title": "MrTieMonocle",
+		"tags": "",
+		"body": "Mr Tie: I appreciate this\n<<TieMonocleSprite>>\nMr Tie: I'll finally be able to understand the power of this monocle\nYou: Nothing seems different\nMr Tie: No, I can tell. This monocle is giving me strength \n<<TieMonocleEnding>>\nFiller Text",
+		"position": {
+			"x": -2672,
+			"y": 994
+		},
+		"colorID": 0
+	},
+	{
+		"title": "KeepMonocle_MrTie",
+		"tags": "",
+		"body": "Mr Tie: Fine, but make sure you don't give it to the Mayor",
+		"position": {
+			"x": -2226,
+			"y": 962
+		},
+		"colorID": 0
+	}
+]

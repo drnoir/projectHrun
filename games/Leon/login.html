@@ -3,16 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Login - HRUN</title>
+    <link rel="stylesheet" href="login.css">
     <style>
-        body { font-family: Arial; background-color: #1e1e2f; color: #f0f0f0; }
-        header, nav, footer { background-color: #2e2e3e; padding: 1em; text-align: center; }
-        nav a { color: #ccc; margin: 0 15px; text-decoration: none; }
-        nav a:hover { color: #fff; }
-        main { display: flex; justify-content: center; align-items: center; height: 70vh; }
-        form { background-color: #333; padding: 2em; border-radius: 10px; width: 300px; }
-        input { width: 100%; padding: 0.5em; margin: 0.5em 0; border: none; border-radius: 5px; }
-        button { width: 100%; padding: 0.5em; background-color: #555; color: white; border: none; border-radius: 5px; }
-        button:hover { background-color: #777; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("dungeon image.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+        }
+
+        header, nav, main, footer {
+            background-color: rgba(0, 0, 0, 0.6); /* semi-transparent for readability */
+            padding: 1rem;
+        }
+
+        form {
+            max-width: 300px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        input, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -20,7 +53,7 @@
         <h1>HRUN</h1>
     </header>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="home.html">Home</a>
         <a href="login.html">Login</a>
         <a href="forum.html">Forum</a>
     </nav>

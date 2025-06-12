@@ -1,0 +1,80 @@
+@import url('https://fonts.cdnfonts.com/css/berlin-sans-fb');
+html *
+{
+   font-family: 'Berlin Sans FB', sans-serif !important;
+}
+
+h1{
+    font-size: 7vh !important
+}
+
+h2{
+    font-size: 5vh !important
+}
+
+p{
+    font-size: 3vh;
+}
+textarea{
+    border-width: 2px;
+    border-color: black;
+}
+input{
+    position: relative;
+    width: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 24vh;
+}
+iframe {
+      border: none;
+      width: 65vw;
+      height: 75vh;
+      margin: 20px auto;
+      display: block;
+}
+.bg-orange{
+    background-color: #db6a00;
+    min-width: 96vw;
+    min-height: 80vh;
+    margin: 2%;
+    margin-bottom:0%;
+}
+.CustomButtonDefault{
+    font-size: 24px !important;
+    width: 10em !important;
+    margin: 25px !important;
+    margin-top: 2% !important;
+    margin-bottom: 5% !important;
+}
+.SwitchMethodButton{
+    font-size: 16px !important;
+    width: 7em !important;
+}
+.ForumPost{
+    background: rgba(68, 114, 196, 0.5) !important;
+    border-color:black !important;
+    border-width: 2px !important;
+    max-width: 1080px;
+    max-height: 15vh;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 4vh;
+}
+.MakePost{
+    display:block;
+    background-color: grey;
+    margin: auto;
+    max-width: 80%;
+    position: relative;
+    top:8vh
+}
+#PlayButton{
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    font-size: 24px;
+    width: 15em;
+}

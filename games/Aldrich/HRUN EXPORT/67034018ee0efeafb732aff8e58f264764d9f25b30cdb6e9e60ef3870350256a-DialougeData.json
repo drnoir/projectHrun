@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Quest",
+		"tags": "",
+		"body": "Listen Dummy...\nIf you want me to accompany you thorough this journey, Fetch me the sapphire pendant from the Manor \nGo through the portal over there, it should get you near the pendant\nAnd if you ever get the pendant, come through the same portal you got there\nPay attention. I wont repeat it again.\nThis may be a little challenging considering....\nWell... You.\nBut you'll get it\nI believe in you\nNow shoo, Go away",
+		"position": {
+			"x": -517,
+			"y": -216
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Questsuccess",
+		"tags": "",
+		"body": "What you actually did it!!!\nI didn't expec-\nNevermind\nWell, Congratulations.\nYou have blown away my expectations even though I didn't expect much.\n...\nThis concludes the prototype version of Project HRUN.\nThank you for playing.\n",
+		"position": {
+			"x": -184,
+			"y": -223
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Dog",
+		"tags": "",
+		"body": "WoOF!!!\nWOoF..WoOFF!!!.",
+		"position": {
+			"x": -467,
+			"y": 18
+		},
+		"colorID": 0
+	}
+]
